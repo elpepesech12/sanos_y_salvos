@@ -1,10 +1,8 @@
 const API_URL = "http://localhost:8081/api";
 
 export const mascotaService = {
-    listar: async (token) => {
-        const resp = await fetch(`${API_URL}/mascotas`, {
-            headers: { Authorization: `Bearer ${token}` } // Necesario por SecurityConfig 
-        });
+    listar: async () => {
+        const resp = await fetch(`${API_URL}/mascotas`);
         return await resp.json();
     },
     reportarHallazgo: async (id, estado) => {
